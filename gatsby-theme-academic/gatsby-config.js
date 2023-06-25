@@ -236,6 +236,8 @@ module.exports = ({
     contactFormUrl: '',
     googleAnalyticTrackingId,
     education: [],
+    job: [],
+    school: [],
     interests: [],
     experience: [
       {
