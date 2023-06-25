@@ -19,21 +19,23 @@ const generateInterest = (data) => (
 
 const Experience = () => {
   const siteMetadata = useSiteMetadata();
-  const previousTimeLineData = siteMetadata.education.slice(0, siteMetadata.education.length - 1);
-  const lastTimeLineData = siteMetadata.education.slice(siteMetadata.education.length - 1);
+  const previousEducationTimeLineData = siteMetadata.school.slice(0, siteMetadata.school.length - 1);
+  const previousJobTimeLineData = siteMetadata.job.slice(0, siteMetadata.job.length - 1);
+  const lastEducationTimeLineData = siteMetadata.school.slice(siteMetadata.school.length - 1);
+  const lastJobTimeLineData = siteMetadata.job.slice(siteMetadata.job.length - 1);
 
   return (
     <div className={styles.homepageSection}>
       <Row>
         <Col xs={24} sm={24} md={12} lg={15} style={{ marginBottom: '-2rem' }}>
           <h2 style={{ marginBottom: '0' }}>Education</h2>
-          {siteMetadata.education.length > 1
+          {siteMetadata.school.length > 1
             ? (
               <Timeline lineStyle={{ top: '20px' }} lineColor="#44566C" style={{ width: '100%' }}>
-                {previousTimeLineData.map(TimelineItem)}
+                {previousEducationTimeLineData.map(TimelineItem)}
               </Timeline>
             ) : null}
-          {siteMetadata.education.length > 0
+          {siteMetadata.school.length > 0
             ? (
               <Timeline
                 lineStyle={{ display: 'none' }}
@@ -42,7 +44,7 @@ const Experience = () => {
                   width: '100%',
                 }}
               >
-                {lastTimeLineData.map(TimelineItem)}
+                {lastEducationTimeLineData.map(TimelineItem)}
               </Timeline>
             ) : null}
         </Col>
@@ -53,7 +55,29 @@ const Experience = () => {
           </List>
         </Col>
       </Row>
-
+      <Row>
+        <Col xs={24} sm={24} md={12} lg={15} style={{ marginBottom: '-2rem' }}>
+          <h2 style={{ marginBottom: '0' }}>Experience</h2>
+          {siteMetadata.job.length > 1
+            ? (
+              <Timeline lineStyle={{ top: '20px' }} lineColor="#44566C" style={{ width: '100%' }}>
+                {previousJobTimeLineData.map(TimelineItem)}
+              </Timeline>
+            ) : null}
+          {siteMetadata.job.length > 0
+            ? (
+              <Timeline
+                lineStyle={{ display: 'none' }}
+                style={{
+                  top: '-30px',
+                  width: '100%',
+                }}
+              >
+                {lastJobTimeLineData.map(TimelineItem)}
+              </Timeline>
+            ) : null}
+        </Col>
+      </Row>
     </div>
   );
 };
