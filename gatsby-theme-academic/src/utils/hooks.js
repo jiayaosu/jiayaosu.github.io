@@ -72,6 +72,18 @@ export const useSiteMetadata = () => {
             title
             location
           }
+          job {
+            date
+            icon
+            title
+            location
+          }
+          school {
+            date
+            icon
+            title
+            location
+          }
           experience {
             title
             position
