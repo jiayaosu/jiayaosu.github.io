@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://jiayaosu.github.io/sitemap/sitemap-index.xml
+Host: https://jiayaosu.github.io
